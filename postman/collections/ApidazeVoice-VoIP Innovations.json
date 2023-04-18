@@ -5182,7 +5182,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "dc17b5e1-1bca-4246-a080-19db87042201",
+				"id": "e73d9986-d965-4ecb-a961-1eff402876d8",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -5192,7 +5192,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "7f433d85-d27b-455f-9e29-110ce6c07cf9",
+				"id": "4f848353-dc81-4975-b9e0-3dadb2669650",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -5202,9 +5202,21 @@
 	],
 	"variable": [
 		{
-			"id": "591422bf-7182-40a3-8a89-ea779b82860f",
+			"id": "be069a35-1859-4d8a-8ca7-d9acf84d674e",
 			"key": "baseUrl",
 			"value": "https://api-prd.kpn.com/communication/apidaze/cpaas"
+		},
+		{
+			"id": "3357e4dc-b0f8-4cbc-ae72-d21bfc429e96",
+			"key": "client_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "b75a7f81-0190-48da-907b-5315927fa430",
+			"key": "client_secret",
+			"value": "",
+			"type": "string"
 		}
 	]
 }
