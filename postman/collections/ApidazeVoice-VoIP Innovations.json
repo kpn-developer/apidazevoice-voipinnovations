@@ -1,0 +1,5210 @@
+{
+	"info": {
+		"_postman_id": "94908ccc-d24e-47a9-aeb8-7d5ac3a1285c",
+		"name": "ApidazeVoice-VoIP Innovations",
+		"description": "This REST API exposes actions that help your apps to interact with APIdaze’s Telco platform in mulitples ways. You can set the URL from where Apidaze fetchs XML instructions to run on Apidaze platform. You can write your various scripts there using the [Script Reference doc](https://developer.kpn.com/script-reference-documentation), and test them. You can manage your phone numbers, connect directly with other SIP carriers (inbound and outbound), manage your SIP accounts, voicemail boxes and messages, provision your hardphones.\n## [KPN Developer](https://developer.kpn.com/)<br/> [Getting Started](https://developer.kpn.com/getting-started)\n---\n \n\nContact Support:\n Name: API Support\n Email: api_developer@kpn.com",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "4406147-94908ccc-d24e-47a9-aeb8-7d5ac3a1285c"
+	},
+	"item": [
+		{
+			"name": "sipaccounts",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "status",
+							"item": [
+								{
+									"name": "SIP Account Read",
+									"id": "1a24fa8a-9b44-495a-83b6-d3790c147250",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/sipaccounts/:id/status",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"sipaccounts",
+												":id",
+												"status"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "Returns a SIP account by id."
+									},
+									"response": [
+										{
+											"id": "bf0bd359-7b65-4832-baba-56e377e1120b",
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/sipaccounts/:id/status",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"sipaccounts",
+														":id",
+														"status"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>"
+														}
+													]
+												},
+												"description": "Returns a SIP account by id."
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "[\n  {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"sip\": {\n      \"username\": \"<string>\",\n      \"password\": \"<string>\"\n    },\n    \"callerid\": {\n      \"internal_name\": \"<string>\",\n      \"internal_number\": \"<string>\",\n      \"external_name\": \"<string>\",\n      \"external_number\": \"<string>\"\n    },\n    \"voicemail\": {\n      \"mwi_account\": \"<string>\"\n    },\n    \"created_at\": \"<string>\",\n    \"updated_at\": \"<string>\"\n  },\n  {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"sip\": {\n      \"username\": \"<string>\",\n      \"password\": \"<string>\"\n    },\n    \"callerid\": {\n      \"internal_name\": \"<string>\",\n      \"internal_number\": \"<string>\",\n      \"external_name\": \"<string>\",\n      \"external_number\": \"<string>\"\n    },\n    \"voicemail\": {\n      \"mwi_account\": \"<string>\"\n    },\n    \"created_at\": \"<string>\",\n    \"updated_at\": \"<string>\"\n  }\n]"
+										},
+										{
+											"id": "a9d35c78-e348-4c6a-ba3f-d6a59df1c8b9",
+											"name": "Bad Request",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/sipaccounts/:id/status",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"sipaccounts",
+														":id",
+														"status"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>"
+														}
+													]
+												},
+												"description": "Returns a SIP account by id."
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+										},
+										{
+											"id": "ee4292fd-7b5f-4f94-9845-20e3952e2a04",
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/sipaccounts/:id/status",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"sipaccounts",
+														":id",
+														"status"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>"
+														}
+													]
+												},
+												"description": "Returns a SIP account by id."
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+										},
+										{
+											"id": "4ba8be6d-68ae-4fb5-9c18-72527854a5fe",
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/sipaccounts/:id/status",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"sipaccounts",
+														":id",
+														"status"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>"
+														}
+													]
+												},
+												"description": "Returns a SIP account by id."
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+										},
+										{
+											"id": "50500dd8-935f-4e11-a85d-909ef5aa980a",
+											"name": "Not Found",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/sipaccounts/:id/status",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"sipaccounts",
+														":id",
+														"status"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>"
+														}
+													]
+												},
+												"description": "Returns a SIP account by id."
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+										},
+										{
+											"id": "8ea1b854-fdf7-47d7-972c-d80aea725197",
+											"name": "Too Many Requests",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/sipaccounts/:id/status",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"sipaccounts",
+														":id",
+														"status"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>"
+														}
+													]
+												},
+												"description": "Returns a SIP account by id."
+											},
+											"status": "Too Many Requests",
+											"code": 429,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+										},
+										{
+											"id": "e18e20f3-b962-4898-8a13-c36db95fb78f",
+											"name": "Server Error",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/sipaccounts/:id/status",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"sipaccounts",
+														":id",
+														"status"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>"
+														}
+													]
+												},
+												"description": "Returns a SIP account by id."
+											},
+											"status": "Internal Server Error",
+											"code": 500,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+										},
+										{
+											"id": "217903ce-25ee-453f-a435-e74f8ff514cc",
+											"name": "Service Unavailable",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/sipaccounts/:id/status",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"sipaccounts",
+														":id",
+														"status"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>"
+														}
+													]
+												},
+												"description": "Returns a SIP account by id."
+											},
+											"status": "Service Unavailable",
+											"code": 503,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+										}
+									]
+								}
+							],
+							"id": "0ff1f378-015b-4542-aa59-6e98877dd079"
+						},
+						{
+							"name": "SIP Account Read",
+							"id": "413ca895-95db-4829-a0fe-3fa067853478",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/sipaccounts/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"sipaccounts",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<string>"
+										}
+									]
+								},
+								"description": "Returns a SIP account by id."
+							},
+							"response": [
+								{
+									"id": "76bdfa89-7964-4902-bc8b-473f619a5b54",
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/sipaccounts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"sipaccounts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "Returns a SIP account by id."
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"sip\": {\n      \"username\": \"<string>\",\n      \"password\": \"<string>\"\n    },\n    \"callerid\": {\n      \"internal_name\": \"<string>\",\n      \"internal_number\": \"<string>\",\n      \"external_name\": \"<string>\",\n      \"external_number\": \"<string>\"\n    },\n    \"voicemail\": {\n      \"mwi_account\": \"<string>\"\n    },\n    \"created_at\": \"<string>\",\n    \"updated_at\": \"<string>\"\n  },\n  {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"sip\": {\n      \"username\": \"<string>\",\n      \"password\": \"<string>\"\n    },\n    \"callerid\": {\n      \"internal_name\": \"<string>\",\n      \"internal_number\": \"<string>\",\n      \"external_name\": \"<string>\",\n      \"external_number\": \"<string>\"\n    },\n    \"voicemail\": {\n      \"mwi_account\": \"<string>\"\n    },\n    \"created_at\": \"<string>\",\n    \"updated_at\": \"<string>\"\n  }\n]"
+								},
+								{
+									"id": "a80d6504-cb3b-4759-8ed0-d0e9b6d64884",
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/sipaccounts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"sipaccounts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "Returns a SIP account by id."
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+								},
+								{
+									"id": "84718fca-a8eb-41ad-891d-67448bb2958a",
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/sipaccounts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"sipaccounts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "Returns a SIP account by id."
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+								},
+								{
+									"id": "5c5dcce4-06a6-4748-b13b-118b4790ade1",
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/sipaccounts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"sipaccounts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "Returns a SIP account by id."
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+								},
+								{
+									"id": "9ec6ccc6-7f6c-49a5-b19f-a54fffff0896",
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/sipaccounts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"sipaccounts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "Returns a SIP account by id."
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+								},
+								{
+									"id": "0e612ac4-f9d9-4536-af11-2b62d40a0abb",
+									"name": "Too Many Requests",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/sipaccounts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"sipaccounts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "Returns a SIP account by id."
+									},
+									"status": "Too Many Requests",
+									"code": 429,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+								},
+								{
+									"id": "6d39e2b0-add6-48c4-967e-d35f7f0ddbe2",
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/sipaccounts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"sipaccounts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "Returns a SIP account by id."
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+								},
+								{
+									"id": "e49824a4-4ff8-4ce1-ac0f-4f6b1d9685e6",
+									"name": "Service Unavailable",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/sipaccounts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"sipaccounts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "Returns a SIP account by id."
+									},
+									"status": "Service Unavailable",
+									"code": 503,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "SIP Account Update",
+							"id": "9a779a80-82a5-43d5-ad0f-e1849dddbdb0",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"description": "The caller identifier used internally, that is, when calls are placed from within your domain.",
+											"key": "internal_caller_id_number",
+											"value": "<string>"
+										},
+										{
+											"description": "The caller identifier used externally, that is, when calls are placed from this account to a PSTN number.",
+											"key": "external_caller_id_number",
+											"value": "<string>"
+										},
+										{
+											"description": "Name of this SIP account",
+											"key": "name",
+											"value": "<string>"
+										},
+										{
+											"description": "Message Waiting Indicator account of this SIP account. The Voicemail account this SIP account will be notified about when messages are left or deleted there.",
+											"key": "mwi_account",
+											"value": "<string>"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/sipaccounts/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"sipaccounts",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<string>"
+										}
+									]
+								},
+								"description": "Returns a SIP account by id."
+							},
+							"response": [
+								{
+									"id": "0b2d0922-f415-4604-89ec-398214e1c0e1",
+									"name": "OK",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/x-www-form-urlencoded"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"description": "The caller identifier used internally, that is, when calls are placed from within your domain.",
+													"key": "internal_caller_id_number",
+													"value": "<string>"
+												},
+												{
+													"description": "The caller identifier used externally, that is, when calls are placed from this account to a PSTN number.",
+													"key": "external_caller_id_number",
+													"value": "<string>"
+												},
+												{
+													"description": "Name of this SIP account",
+													"key": "name",
+													"value": "<string>"
+												},
+												{
+													"description": "Message Waiting Indicator account of this SIP account. The Voicemail account this SIP account will be notified about when messages are left or deleted there.",
+													"key": "mwi_account",
+													"value": "<string>"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/sipaccounts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"sipaccounts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "Returns a SIP account by id."
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"sip\": {\n      \"username\": \"<string>\",\n      \"password\": \"<string>\"\n    },\n    \"callerid\": {\n      \"internal_name\": \"<string>\",\n      \"internal_number\": \"<string>\",\n      \"external_name\": \"<string>\",\n      \"external_number\": \"<string>\"\n    },\n    \"voicemail\": {\n      \"mwi_account\": \"<string>\"\n    },\n    \"created_at\": \"<string>\",\n    \"updated_at\": \"<string>\"\n  },\n  {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"sip\": {\n      \"username\": \"<string>\",\n      \"password\": \"<string>\"\n    },\n    \"callerid\": {\n      \"internal_name\": \"<string>\",\n      \"internal_number\": \"<string>\",\n      \"external_name\": \"<string>\",\n      \"external_number\": \"<string>\"\n    },\n    \"voicemail\": {\n      \"mwi_account\": \"<string>\"\n    },\n    \"created_at\": \"<string>\",\n    \"updated_at\": \"<string>\"\n  }\n]"
+								},
+								{
+									"id": "87c8da6f-813a-4c1d-a664-3e201d3fd8fb",
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/x-www-form-urlencoded"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"description": "The caller identifier used internally, that is, when calls are placed from within your domain.",
+													"key": "internal_caller_id_number",
+													"value": "<string>"
+												},
+												{
+													"description": "The caller identifier used externally, that is, when calls are placed from this account to a PSTN number.",
+													"key": "external_caller_id_number",
+													"value": "<string>"
+												},
+												{
+													"description": "Name of this SIP account",
+													"key": "name",
+													"value": "<string>"
+												},
+												{
+													"description": "Message Waiting Indicator account of this SIP account. The Voicemail account this SIP account will be notified about when messages are left or deleted there.",
+													"key": "mwi_account",
+													"value": "<string>"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/sipaccounts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"sipaccounts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "Returns a SIP account by id."
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+								},
+								{
+									"id": "37ee592f-de16-4ea0-b504-b27f651dfe25",
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/x-www-form-urlencoded"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"description": "The caller identifier used internally, that is, when calls are placed from within your domain.",
+													"key": "internal_caller_id_number",
+													"value": "<string>"
+												},
+												{
+													"description": "The caller identifier used externally, that is, when calls are placed from this account to a PSTN number.",
+													"key": "external_caller_id_number",
+													"value": "<string>"
+												},
+												{
+													"description": "Name of this SIP account",
+													"key": "name",
+													"value": "<string>"
+												},
+												{
+													"description": "Message Waiting Indicator account of this SIP account. The Voicemail account this SIP account will be notified about when messages are left or deleted there.",
+													"key": "mwi_account",
+													"value": "<string>"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/sipaccounts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"sipaccounts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "Returns a SIP account by id."
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+								},
+								{
+									"id": "ad1a26d8-4a46-4108-8256-2a5e19d0559b",
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/x-www-form-urlencoded"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"description": "The caller identifier used internally, that is, when calls are placed from within your domain.",
+													"key": "internal_caller_id_number",
+													"value": "<string>"
+												},
+												{
+													"description": "The caller identifier used externally, that is, when calls are placed from this account to a PSTN number.",
+													"key": "external_caller_id_number",
+													"value": "<string>"
+												},
+												{
+													"description": "Name of this SIP account",
+													"key": "name",
+													"value": "<string>"
+												},
+												{
+													"description": "Message Waiting Indicator account of this SIP account. The Voicemail account this SIP account will be notified about when messages are left or deleted there.",
+													"key": "mwi_account",
+													"value": "<string>"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/sipaccounts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"sipaccounts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "Returns a SIP account by id."
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+								},
+								{
+									"id": "1eb33270-ed3b-4cf5-9753-de404095cef7",
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/x-www-form-urlencoded"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"description": "The caller identifier used internally, that is, when calls are placed from within your domain.",
+													"key": "internal_caller_id_number",
+													"value": "<string>"
+												},
+												{
+													"description": "The caller identifier used externally, that is, when calls are placed from this account to a PSTN number.",
+													"key": "external_caller_id_number",
+													"value": "<string>"
+												},
+												{
+													"description": "Name of this SIP account",
+													"key": "name",
+													"value": "<string>"
+												},
+												{
+													"description": "Message Waiting Indicator account of this SIP account. The Voicemail account this SIP account will be notified about when messages are left or deleted there.",
+													"key": "mwi_account",
+													"value": "<string>"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/sipaccounts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"sipaccounts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "Returns a SIP account by id."
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+								},
+								{
+									"id": "011461c0-2cce-43b5-b39a-05d5bb258590",
+									"name": "Too Many Requests",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/x-www-form-urlencoded"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"description": "The caller identifier used internally, that is, when calls are placed from within your domain.",
+													"key": "internal_caller_id_number",
+													"value": "<string>"
+												},
+												{
+													"description": "The caller identifier used externally, that is, when calls are placed from this account to a PSTN number.",
+													"key": "external_caller_id_number",
+													"value": "<string>"
+												},
+												{
+													"description": "Name of this SIP account",
+													"key": "name",
+													"value": "<string>"
+												},
+												{
+													"description": "Message Waiting Indicator account of this SIP account. The Voicemail account this SIP account will be notified about when messages are left or deleted there.",
+													"key": "mwi_account",
+													"value": "<string>"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/sipaccounts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"sipaccounts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "Returns a SIP account by id."
+									},
+									"status": "Too Many Requests",
+									"code": 429,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+								},
+								{
+									"id": "f734ca0e-cf13-4ffe-a8ac-af002231cb86",
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/x-www-form-urlencoded"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"description": "The caller identifier used internally, that is, when calls are placed from within your domain.",
+													"key": "internal_caller_id_number",
+													"value": "<string>"
+												},
+												{
+													"description": "The caller identifier used externally, that is, when calls are placed from this account to a PSTN number.",
+													"key": "external_caller_id_number",
+													"value": "<string>"
+												},
+												{
+													"description": "Name of this SIP account",
+													"key": "name",
+													"value": "<string>"
+												},
+												{
+													"description": "Message Waiting Indicator account of this SIP account. The Voicemail account this SIP account will be notified about when messages are left or deleted there.",
+													"key": "mwi_account",
+													"value": "<string>"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/sipaccounts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"sipaccounts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "Returns a SIP account by id."
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+								},
+								{
+									"id": "afd1414d-e49b-4e6b-ba6b-f839f9cbaec3",
+									"name": "Service Unavailable",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/x-www-form-urlencoded"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"description": "The caller identifier used internally, that is, when calls are placed from within your domain.",
+													"key": "internal_caller_id_number",
+													"value": "<string>"
+												},
+												{
+													"description": "The caller identifier used externally, that is, when calls are placed from this account to a PSTN number.",
+													"key": "external_caller_id_number",
+													"value": "<string>"
+												},
+												{
+													"description": "Name of this SIP account",
+													"key": "name",
+													"value": "<string>"
+												},
+												{
+													"description": "Message Waiting Indicator account of this SIP account. The Voicemail account this SIP account will be notified about when messages are left or deleted there.",
+													"key": "mwi_account",
+													"value": "<string>"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/sipaccounts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"sipaccounts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "Returns a SIP account by id."
+									},
+									"status": "Service Unavailable",
+									"code": 503,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "SIP Account Delete",
+							"id": "1df75c55-1c79-412d-9577-32cd3c8e0aea",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/sipaccounts/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"sipaccounts",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<string>"
+										}
+									]
+								},
+								"description": "Deletes the SIP account."
+							},
+							"response": [
+								{
+									"id": "d74a4fc7-baef-423c-9200-5e60946564b8",
+									"name": "OK",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/sipaccounts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"sipaccounts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "Deletes the SIP account."
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"sip\": {\n      \"username\": \"<string>\",\n      \"password\": \"<string>\"\n    },\n    \"callerid\": {\n      \"internal_name\": \"<string>\",\n      \"internal_number\": \"<string>\",\n      \"external_name\": \"<string>\",\n      \"external_number\": \"<string>\"\n    },\n    \"voicemail\": {\n      \"mwi_account\": \"<string>\"\n    },\n    \"created_at\": \"<string>\",\n    \"updated_at\": \"<string>\"\n  },\n  {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"sip\": {\n      \"username\": \"<string>\",\n      \"password\": \"<string>\"\n    },\n    \"callerid\": {\n      \"internal_name\": \"<string>\",\n      \"internal_number\": \"<string>\",\n      \"external_name\": \"<string>\",\n      \"external_number\": \"<string>\"\n    },\n    \"voicemail\": {\n      \"mwi_account\": \"<string>\"\n    },\n    \"created_at\": \"<string>\",\n    \"updated_at\": \"<string>\"\n  }\n]"
+								},
+								{
+									"id": "d847a25b-d688-4fb6-97d5-da8beeb34444",
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/sipaccounts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"sipaccounts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "Deletes the SIP account."
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+								},
+								{
+									"id": "457ca054-1baf-45fd-ae4e-d573c6442fec",
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/sipaccounts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"sipaccounts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "Deletes the SIP account."
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+								},
+								{
+									"id": "be2242df-9494-4b1f-b655-02f9ade5baf3",
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/sipaccounts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"sipaccounts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "Deletes the SIP account."
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+								},
+								{
+									"id": "40dc54c1-7aeb-473a-886b-fb3b5932d566",
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/sipaccounts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"sipaccounts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "Deletes the SIP account."
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+								},
+								{
+									"id": "7c05ea63-5ccf-4ab9-8b93-071ed834546e",
+									"name": "Too Many Requests",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/sipaccounts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"sipaccounts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "Deletes the SIP account."
+									},
+									"status": "Too Many Requests",
+									"code": 429,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+								},
+								{
+									"id": "477f6da2-d7b2-401f-a4cd-04c51102d33f",
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/sipaccounts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"sipaccounts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "Deletes the SIP account."
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+								},
+								{
+									"id": "4929fed0-1ad7-4c98-a6ac-741e592a346d",
+									"name": "Service Unavailable",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/sipaccounts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"sipaccounts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "Deletes the SIP account."
+									},
+									"status": "Service Unavailable",
+									"code": 503,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+								}
+							]
+						}
+					],
+					"id": "0f626145-52c0-4801-86d9-72caa96871e6"
+				},
+				{
+					"name": "SIP Account List",
+					"id": "c059343f-cf59-481a-b5fd-c48efa3ff050",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/sipaccounts",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"sipaccounts"
+							]
+						},
+						"description": "Returns the list of SIP accounts."
+					},
+					"response": [
+						{
+							"id": "5c9a4d1b-a8b3-407e-b301-b0d699d0ea64",
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/sipaccounts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"sipaccounts"
+									]
+								},
+								"description": "Returns the list of SIP accounts."
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"sip\": {\n      \"username\": \"<string>\",\n      \"password\": \"<string>\"\n    },\n    \"callerid\": {\n      \"internal_name\": \"<string>\",\n      \"internal_number\": \"<string>\",\n      \"external_name\": \"<string>\",\n      \"external_number\": \"<string>\"\n    },\n    \"voicemail\": {\n      \"mwi_account\": \"<string>\"\n    },\n    \"created_at\": \"<string>\",\n    \"updated_at\": \"<string>\"\n  },\n  {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"sip\": {\n      \"username\": \"<string>\",\n      \"password\": \"<string>\"\n    },\n    \"callerid\": {\n      \"internal_name\": \"<string>\",\n      \"internal_number\": \"<string>\",\n      \"external_name\": \"<string>\",\n      \"external_number\": \"<string>\"\n    },\n    \"voicemail\": {\n      \"mwi_account\": \"<string>\"\n    },\n    \"created_at\": \"<string>\",\n    \"updated_at\": \"<string>\"\n  }\n]"
+						},
+						{
+							"id": "fe3888f1-ddcb-474d-82f4-d2f6dc02559f",
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/sipaccounts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"sipaccounts"
+									]
+								},
+								"description": "Returns the list of SIP accounts."
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+						},
+						{
+							"id": "078178cc-8a21-4859-bc00-2892bb250f11",
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/sipaccounts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"sipaccounts"
+									]
+								},
+								"description": "Returns the list of SIP accounts."
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+						},
+						{
+							"id": "1f5ebd0a-01f5-4e3d-8199-9f721584bda8",
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/sipaccounts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"sipaccounts"
+									]
+								},
+								"description": "Returns the list of SIP accounts."
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+						},
+						{
+							"id": "fe331f94-a529-4d40-b9fb-eb4c98d546ab",
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/sipaccounts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"sipaccounts"
+									]
+								},
+								"description": "Returns the list of SIP accounts."
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+						},
+						{
+							"id": "31e75330-3e2d-4eba-802d-931da8e57671",
+							"name": "Too Many Requests",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/sipaccounts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"sipaccounts"
+									]
+								},
+								"description": "Returns the list of SIP accounts."
+							},
+							"status": "Too Many Requests",
+							"code": 429,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+						},
+						{
+							"id": "6df08a28-7202-4237-902d-48d5a1cc3560",
+							"name": "Server Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/sipaccounts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"sipaccounts"
+									]
+								},
+								"description": "Returns the list of SIP accounts."
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+						},
+						{
+							"id": "dc2b8dd0-e95d-48ef-8494-9c96d12ffba6",
+							"name": "Service Unavailable",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/sipaccounts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"sipaccounts"
+									]
+								},
+								"description": "Returns the list of SIP accounts."
+							},
+							"status": "Service Unavailable",
+							"code": 503,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "SIP Account Create",
+					"id": "cc1b41a1-4ff1-4df9-a215-86e4ec7b8b6f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"description": "(Required) Username of this SIP account. This parameter is used to authenticate the SIP account.",
+									"key": "username",
+									"value": "<string>"
+								},
+								{
+									"description": "The caller identifier used internally, that is, when calls are placed from within your domain.",
+									"key": "internal_caller_id_number",
+									"value": "<string>"
+								},
+								{
+									"description": "The caller identifier used externally, that is, when calls are placed from this account to a PSTN number.",
+									"key": "external_caller_id_number",
+									"value": "<string>"
+								},
+								{
+									"description": "Name of this SIP account",
+									"key": "name",
+									"value": "<string>"
+								},
+								{
+									"description": "Message Waiting Indicator account of this SIP account. The Voicemail account this SIP account will be notified about when messages are left or deleted there.",
+									"key": "mwi_account",
+									"value": "<string>"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/sipaccounts",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"sipaccounts"
+							]
+						},
+						"description": "Creates a new SIP account"
+					},
+					"response": [
+						{
+							"id": "888c063f-1318-4c46-a838-5f5c3c176c15",
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"description": "(Required) Username of this SIP account. This parameter is used to authenticate the SIP account.",
+											"key": "username",
+											"value": "<string>"
+										},
+										{
+											"description": "The caller identifier used internally, that is, when calls are placed from within your domain.",
+											"key": "internal_caller_id_number",
+											"value": "<string>"
+										},
+										{
+											"description": "The caller identifier used externally, that is, when calls are placed from this account to a PSTN number.",
+											"key": "external_caller_id_number",
+											"value": "<string>"
+										},
+										{
+											"description": "Name of this SIP account",
+											"key": "name",
+											"value": "<string>"
+										},
+										{
+											"description": "Message Waiting Indicator account of this SIP account. The Voicemail account this SIP account will be notified about when messages are left or deleted there.",
+											"key": "mwi_account",
+											"value": "<string>"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/sipaccounts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"sipaccounts"
+									]
+								},
+								"description": "Creates a new SIP account"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"sip\": {\n      \"username\": \"<string>\",\n      \"password\": \"<string>\"\n    },\n    \"callerid\": {\n      \"internal_name\": \"<string>\",\n      \"internal_number\": \"<string>\",\n      \"external_name\": \"<string>\",\n      \"external_number\": \"<string>\"\n    },\n    \"voicemail\": {\n      \"mwi_account\": \"<string>\"\n    },\n    \"created_at\": \"<string>\",\n    \"updated_at\": \"<string>\"\n  },\n  {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"sip\": {\n      \"username\": \"<string>\",\n      \"password\": \"<string>\"\n    },\n    \"callerid\": {\n      \"internal_name\": \"<string>\",\n      \"internal_number\": \"<string>\",\n      \"external_name\": \"<string>\",\n      \"external_number\": \"<string>\"\n    },\n    \"voicemail\": {\n      \"mwi_account\": \"<string>\"\n    },\n    \"created_at\": \"<string>\",\n    \"updated_at\": \"<string>\"\n  }\n]"
+						},
+						{
+							"id": "3910be01-573f-4d1b-a0a8-3ccf2a41c792",
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"description": "(Required) Username of this SIP account. This parameter is used to authenticate the SIP account.",
+											"key": "username",
+											"value": "<string>"
+										},
+										{
+											"description": "The caller identifier used internally, that is, when calls are placed from within your domain.",
+											"key": "internal_caller_id_number",
+											"value": "<string>"
+										},
+										{
+											"description": "The caller identifier used externally, that is, when calls are placed from this account to a PSTN number.",
+											"key": "external_caller_id_number",
+											"value": "<string>"
+										},
+										{
+											"description": "Name of this SIP account",
+											"key": "name",
+											"value": "<string>"
+										},
+										{
+											"description": "Message Waiting Indicator account of this SIP account. The Voicemail account this SIP account will be notified about when messages are left or deleted there.",
+											"key": "mwi_account",
+											"value": "<string>"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/sipaccounts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"sipaccounts"
+									]
+								},
+								"description": "Creates a new SIP account"
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+						},
+						{
+							"id": "bb6f36cc-4704-4b0f-81bc-9c747deb7f2d",
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"description": "(Required) Username of this SIP account. This parameter is used to authenticate the SIP account.",
+											"key": "username",
+											"value": "<string>"
+										},
+										{
+											"description": "The caller identifier used internally, that is, when calls are placed from within your domain.",
+											"key": "internal_caller_id_number",
+											"value": "<string>"
+										},
+										{
+											"description": "The caller identifier used externally, that is, when calls are placed from this account to a PSTN number.",
+											"key": "external_caller_id_number",
+											"value": "<string>"
+										},
+										{
+											"description": "Name of this SIP account",
+											"key": "name",
+											"value": "<string>"
+										},
+										{
+											"description": "Message Waiting Indicator account of this SIP account. The Voicemail account this SIP account will be notified about when messages are left or deleted there.",
+											"key": "mwi_account",
+											"value": "<string>"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/sipaccounts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"sipaccounts"
+									]
+								},
+								"description": "Creates a new SIP account"
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+						},
+						{
+							"id": "2ea77784-9a96-4d30-a21e-503662384721",
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"description": "(Required) Username of this SIP account. This parameter is used to authenticate the SIP account.",
+											"key": "username",
+											"value": "<string>"
+										},
+										{
+											"description": "The caller identifier used internally, that is, when calls are placed from within your domain.",
+											"key": "internal_caller_id_number",
+											"value": "<string>"
+										},
+										{
+											"description": "The caller identifier used externally, that is, when calls are placed from this account to a PSTN number.",
+											"key": "external_caller_id_number",
+											"value": "<string>"
+										},
+										{
+											"description": "Name of this SIP account",
+											"key": "name",
+											"value": "<string>"
+										},
+										{
+											"description": "Message Waiting Indicator account of this SIP account. The Voicemail account this SIP account will be notified about when messages are left or deleted there.",
+											"key": "mwi_account",
+											"value": "<string>"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/sipaccounts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"sipaccounts"
+									]
+								},
+								"description": "Creates a new SIP account"
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+						},
+						{
+							"id": "275a4c16-d805-4ad6-87e5-8b0d86eb8a21",
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"description": "(Required) Username of this SIP account. This parameter is used to authenticate the SIP account.",
+											"key": "username",
+											"value": "<string>"
+										},
+										{
+											"description": "The caller identifier used internally, that is, when calls are placed from within your domain.",
+											"key": "internal_caller_id_number",
+											"value": "<string>"
+										},
+										{
+											"description": "The caller identifier used externally, that is, when calls are placed from this account to a PSTN number.",
+											"key": "external_caller_id_number",
+											"value": "<string>"
+										},
+										{
+											"description": "Name of this SIP account",
+											"key": "name",
+											"value": "<string>"
+										},
+										{
+											"description": "Message Waiting Indicator account of this SIP account. The Voicemail account this SIP account will be notified about when messages are left or deleted there.",
+											"key": "mwi_account",
+											"value": "<string>"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/sipaccounts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"sipaccounts"
+									]
+								},
+								"description": "Creates a new SIP account"
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+						},
+						{
+							"id": "8bc33fb9-38a7-45c6-8535-c3f182d3cb75",
+							"name": "Too Many Requests",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"description": "(Required) Username of this SIP account. This parameter is used to authenticate the SIP account.",
+											"key": "username",
+											"value": "<string>"
+										},
+										{
+											"description": "The caller identifier used internally, that is, when calls are placed from within your domain.",
+											"key": "internal_caller_id_number",
+											"value": "<string>"
+										},
+										{
+											"description": "The caller identifier used externally, that is, when calls are placed from this account to a PSTN number.",
+											"key": "external_caller_id_number",
+											"value": "<string>"
+										},
+										{
+											"description": "Name of this SIP account",
+											"key": "name",
+											"value": "<string>"
+										},
+										{
+											"description": "Message Waiting Indicator account of this SIP account. The Voicemail account this SIP account will be notified about when messages are left or deleted there.",
+											"key": "mwi_account",
+											"value": "<string>"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/sipaccounts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"sipaccounts"
+									]
+								},
+								"description": "Creates a new SIP account"
+							},
+							"status": "Too Many Requests",
+							"code": 429,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+						},
+						{
+							"id": "9c3fd025-38ce-4891-a397-040b4fc3d8a8",
+							"name": "Server Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"description": "(Required) Username of this SIP account. This parameter is used to authenticate the SIP account.",
+											"key": "username",
+											"value": "<string>"
+										},
+										{
+											"description": "The caller identifier used internally, that is, when calls are placed from within your domain.",
+											"key": "internal_caller_id_number",
+											"value": "<string>"
+										},
+										{
+											"description": "The caller identifier used externally, that is, when calls are placed from this account to a PSTN number.",
+											"key": "external_caller_id_number",
+											"value": "<string>"
+										},
+										{
+											"description": "Name of this SIP account",
+											"key": "name",
+											"value": "<string>"
+										},
+										{
+											"description": "Message Waiting Indicator account of this SIP account. The Voicemail account this SIP account will be notified about when messages are left or deleted there.",
+											"key": "mwi_account",
+											"value": "<string>"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/sipaccounts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"sipaccounts"
+									]
+								},
+								"description": "Creates a new SIP account"
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+						},
+						{
+							"id": "3261b634-bbdd-431c-bb9e-c6f9acaccb78",
+							"name": "Service Unavailable",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"description": "(Required) Username of this SIP account. This parameter is used to authenticate the SIP account.",
+											"key": "username",
+											"value": "<string>"
+										},
+										{
+											"description": "The caller identifier used internally, that is, when calls are placed from within your domain.",
+											"key": "internal_caller_id_number",
+											"value": "<string>"
+										},
+										{
+											"description": "The caller identifier used externally, that is, when calls are placed from this account to a PSTN number.",
+											"key": "external_caller_id_number",
+											"value": "<string>"
+										},
+										{
+											"description": "Name of this SIP account",
+											"key": "name",
+											"value": "<string>"
+										},
+										{
+											"description": "Message Waiting Indicator account of this SIP account. The Voicemail account this SIP account will be notified about when messages are left or deleted there.",
+											"key": "mwi_account",
+											"value": "<string>"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/sipaccounts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"sipaccounts"
+									]
+								},
+								"description": "Creates a new SIP account"
+							},
+							"status": "Service Unavailable",
+							"code": 503,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+						}
+					]
+				}
+			],
+			"id": "2b8c1e1f-3a0e-4fdc-8e60-521912c4e70a"
+		},
+		{
+			"name": "externalscripts",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "External Script Read",
+							"id": "61682f75-007e-4351-aa35-f063dd3a59fc",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/externalscripts/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"externalscripts",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<string>"
+										}
+									]
+								},
+								"description": "Returns the External Script object details by id."
+							},
+							"response": [
+								{
+									"id": "58009038-16bc-41dd-bccd-c1d74fc6552e",
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/externalscripts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"externalscripts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "Returns the External Script object details by id."
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"url\": \"<string>\",\n    \"created_at\": \"<string>\",\n    \"updated_at\": \"<string>\"\n  },\n  {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"url\": \"<string>\",\n    \"created_at\": \"<string>\",\n    \"updated_at\": \"<string>\"\n  }\n]"
+								},
+								{
+									"id": "d8bb2ad6-0c4c-4a01-8f99-08070b0ed0a9",
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/externalscripts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"externalscripts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "Returns the External Script object details by id."
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+								},
+								{
+									"id": "b793660c-e3a0-4360-bb5b-5cd2010d6527",
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/externalscripts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"externalscripts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "Returns the External Script object details by id."
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+								},
+								{
+									"id": "7ed255d6-6bf4-46ff-b20e-858d554003b2",
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/externalscripts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"externalscripts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "Returns the External Script object details by id."
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+								},
+								{
+									"id": "f1468339-00ce-4891-a8dc-ed1747d5c098",
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/externalscripts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"externalscripts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "Returns the External Script object details by id."
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+								},
+								{
+									"id": "1e87eaa1-c28f-4300-87ac-aa03165d6172",
+									"name": "Too Many Requests",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/externalscripts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"externalscripts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "Returns the External Script object details by id."
+									},
+									"status": "Too Many Requests",
+									"code": 429,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+								},
+								{
+									"id": "d9773515-0c1f-4b1d-80b5-56fb73bca316",
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/externalscripts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"externalscripts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "Returns the External Script object details by id."
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+								},
+								{
+									"id": "d1e049c1-6d55-4da8-9636-807535ac1425",
+									"name": "Service Unavailable",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/externalscripts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"externalscripts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "Returns the External Script object details by id."
+									},
+									"status": "Service Unavailable",
+									"code": 503,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "External Script Update",
+							"id": "bf800048-d090-488a-a1c3-7aa5734ad9a3",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"description": "(Required) URL of the external script. This URL is fetched when a calls is placed to one of your numbers",
+											"key": "url",
+											"value": "<string>"
+										},
+										{
+											"description": "name of the external script.",
+											"key": "name",
+											"value": "<string>"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/externalscripts/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"externalscripts",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<string>"
+										}
+									]
+								},
+								"description": "Updates the external script."
+							},
+							"response": [
+								{
+									"id": "a62bb47f-f7a9-40f0-bdb9-49798018c619",
+									"name": "OK",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/x-www-form-urlencoded"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"description": "(Required) URL of the external script. This URL is fetched when a calls is placed to one of your numbers",
+													"key": "url",
+													"value": "<string>"
+												},
+												{
+													"description": "name of the external script.",
+													"key": "name",
+													"value": "<string>"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/externalscripts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"externalscripts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "Updates the external script."
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"url\": \"<string>\",\n    \"created_at\": \"<string>\",\n    \"updated_at\": \"<string>\"\n  },\n  {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"url\": \"<string>\",\n    \"created_at\": \"<string>\",\n    \"updated_at\": \"<string>\"\n  }\n]"
+								},
+								{
+									"id": "1fe73764-9ab5-4156-b050-80962c424af0",
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/x-www-form-urlencoded"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"description": "(Required) URL of the external script. This URL is fetched when a calls is placed to one of your numbers",
+													"key": "url",
+													"value": "<string>"
+												},
+												{
+													"description": "name of the external script.",
+													"key": "name",
+													"value": "<string>"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/externalscripts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"externalscripts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "Updates the external script."
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+								},
+								{
+									"id": "6e13e6d2-a732-470d-9a44-60436f184596",
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/x-www-form-urlencoded"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"description": "(Required) URL of the external script. This URL is fetched when a calls is placed to one of your numbers",
+													"key": "url",
+													"value": "<string>"
+												},
+												{
+													"description": "name of the external script.",
+													"key": "name",
+													"value": "<string>"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/externalscripts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"externalscripts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "Updates the external script."
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+								},
+								{
+									"id": "7ab6fe9b-0d5f-4c7e-b102-6d505914682d",
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/x-www-form-urlencoded"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"description": "(Required) URL of the external script. This URL is fetched when a calls is placed to one of your numbers",
+													"key": "url",
+													"value": "<string>"
+												},
+												{
+													"description": "name of the external script.",
+													"key": "name",
+													"value": "<string>"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/externalscripts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"externalscripts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "Updates the external script."
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+								},
+								{
+									"id": "f2b701c7-ee84-408d-9ad4-f7b990d97f34",
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/x-www-form-urlencoded"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"description": "(Required) URL of the external script. This URL is fetched when a calls is placed to one of your numbers",
+													"key": "url",
+													"value": "<string>"
+												},
+												{
+													"description": "name of the external script.",
+													"key": "name",
+													"value": "<string>"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/externalscripts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"externalscripts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "Updates the external script."
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+								},
+								{
+									"id": "4ece6b20-307e-4756-803d-1d97b6446a99",
+									"name": "Too Many Requests",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/x-www-form-urlencoded"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"description": "(Required) URL of the external script. This URL is fetched when a calls is placed to one of your numbers",
+													"key": "url",
+													"value": "<string>"
+												},
+												{
+													"description": "name of the external script.",
+													"key": "name",
+													"value": "<string>"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/externalscripts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"externalscripts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "Updates the external script."
+									},
+									"status": "Too Many Requests",
+									"code": 429,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+								},
+								{
+									"id": "4de090b7-776f-4b2d-8057-7cbb522bac19",
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/x-www-form-urlencoded"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"description": "(Required) URL of the external script. This URL is fetched when a calls is placed to one of your numbers",
+													"key": "url",
+													"value": "<string>"
+												},
+												{
+													"description": "name of the external script.",
+													"key": "name",
+													"value": "<string>"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/externalscripts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"externalscripts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "Updates the external script."
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+								},
+								{
+									"id": "bc6ef720-9597-4df8-8efd-6ba4f59a6904",
+									"name": "Service Unavailable",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/x-www-form-urlencoded"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"description": "(Required) URL of the external script. This URL is fetched when a calls is placed to one of your numbers",
+													"key": "url",
+													"value": "<string>"
+												},
+												{
+													"description": "name of the external script.",
+													"key": "name",
+													"value": "<string>"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/externalscripts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"externalscripts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "Updates the external script."
+									},
+									"status": "Service Unavailable",
+									"code": 503,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "External Script Delete",
+							"id": "99ef4040-79aa-4937-a737-b437e2fca2a8",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/externalscripts/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"externalscripts",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<string>"
+										}
+									]
+								},
+								"description": "Deletes the external script."
+							},
+							"response": [
+								{
+									"id": "2fd9a68c-0909-42cc-a98b-8fccdd048856",
+									"name": "OK",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/externalscripts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"externalscripts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "Deletes the external script."
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": null
+								},
+								{
+									"id": "cc717706-a785-444d-80c4-c09a6d87a008",
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/externalscripts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"externalscripts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "Deletes the external script."
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+								},
+								{
+									"id": "316e927f-4624-4102-b8cd-8039b49b84bf",
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/externalscripts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"externalscripts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "Deletes the external script."
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+								},
+								{
+									"id": "2d76aafb-e8d3-4a21-9564-1b6eafd50489",
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/externalscripts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"externalscripts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "Deletes the external script."
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+								},
+								{
+									"id": "149d70c2-c867-48dd-aec7-9fc73876ee76",
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/externalscripts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"externalscripts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "Deletes the external script."
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+								},
+								{
+									"id": "b3c798f3-c6c3-424b-bd31-b49bddec7157",
+									"name": "Too Many Requests",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/externalscripts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"externalscripts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "Deletes the external script."
+									},
+									"status": "Too Many Requests",
+									"code": 429,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+								},
+								{
+									"id": "69bdafda-7c98-41d5-8008-16d5c8574c21",
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/externalscripts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"externalscripts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "Deletes the external script."
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+								},
+								{
+									"id": "88d21bf9-55aa-4ef7-92d2-23a589d4d7fc",
+									"name": "Service Unavailable",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/externalscripts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"externalscripts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "Deletes the external script."
+									},
+									"status": "Service Unavailable",
+									"code": 503,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+								}
+							]
+						}
+					],
+					"id": "9c28e11f-cfd2-41c1-a9b2-d1201ea72cac"
+				},
+				{
+					"name": "test",
+					"item": [
+						{
+							"name": "External Script Test",
+							"id": "94418fa7-ab5b-49cf-a06f-2d09900c494b",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"description": "(Required) URL of your External Script if empty.",
+											"key": "url",
+											"value": "<string>"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/externalscripts/test",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"externalscripts",
+										"test"
+									]
+								},
+								"description": "Tests in real time your External Script by fetching its URL and returning the XML instructions. You can send any parameter in the request and therefore check the proper behaviour of the script depending on how call are placed (to a DID, from a SIP account, from WebRTC/JavaScript, etc.). Only one external script is allowed per domain."
+							},
+							"response": [
+								{
+									"id": "03723d91-4b28-44fa-8753-7117b9919e09",
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/x-www-form-urlencoded"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"description": "(Required) URL of your External Script if empty.",
+													"key": "url",
+													"value": "<string>"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/externalscripts/test",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"externalscripts",
+												"test"
+											]
+										},
+										"description": "Tests in real time your External Script by fetching its URL and returning the XML instructions. You can send any parameter in the request and therefore check the proper behaviour of the script depending on how call are placed (to a DID, from a SIP account, from WebRTC/JavaScript, etc.). Only one external script is allowed per domain."
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"url\": \"<string>\",\n    \"created_at\": \"<string>\",\n    \"updated_at\": \"<string>\"\n  },\n  {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"url\": \"<string>\",\n    \"created_at\": \"<string>\",\n    \"updated_at\": \"<string>\"\n  }\n]"
+								},
+								{
+									"id": "af006284-fe3b-46da-b61f-d5db804a6a74",
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/x-www-form-urlencoded"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"description": "(Required) URL of your External Script if empty.",
+													"key": "url",
+													"value": "<string>"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/externalscripts/test",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"externalscripts",
+												"test"
+											]
+										},
+										"description": "Tests in real time your External Script by fetching its URL and returning the XML instructions. You can send any parameter in the request and therefore check the proper behaviour of the script depending on how call are placed (to a DID, from a SIP account, from WebRTC/JavaScript, etc.). Only one external script is allowed per domain."
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+								},
+								{
+									"id": "65cc0096-ea88-41d3-9342-fd8204ef4901",
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/x-www-form-urlencoded"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"description": "(Required) URL of your External Script if empty.",
+													"key": "url",
+													"value": "<string>"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/externalscripts/test",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"externalscripts",
+												"test"
+											]
+										},
+										"description": "Tests in real time your External Script by fetching its URL and returning the XML instructions. You can send any parameter in the request and therefore check the proper behaviour of the script depending on how call are placed (to a DID, from a SIP account, from WebRTC/JavaScript, etc.). Only one external script is allowed per domain."
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+								},
+								{
+									"id": "8f3235cb-47fd-4190-91f1-74bbcf1d28b7",
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/x-www-form-urlencoded"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"description": "(Required) URL of your External Script if empty.",
+													"key": "url",
+													"value": "<string>"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/externalscripts/test",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"externalscripts",
+												"test"
+											]
+										},
+										"description": "Tests in real time your External Script by fetching its URL and returning the XML instructions. You can send any parameter in the request and therefore check the proper behaviour of the script depending on how call are placed (to a DID, from a SIP account, from WebRTC/JavaScript, etc.). Only one external script is allowed per domain."
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+								},
+								{
+									"id": "35f561fa-e703-48a4-9d73-59719a2bbb0b",
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/x-www-form-urlencoded"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"description": "(Required) URL of your External Script if empty.",
+													"key": "url",
+													"value": "<string>"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/externalscripts/test",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"externalscripts",
+												"test"
+											]
+										},
+										"description": "Tests in real time your External Script by fetching its URL and returning the XML instructions. You can send any parameter in the request and therefore check the proper behaviour of the script depending on how call are placed (to a DID, from a SIP account, from WebRTC/JavaScript, etc.). Only one external script is allowed per domain."
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+								},
+								{
+									"id": "76c86123-374b-4505-9a57-9deb3c9e9a12",
+									"name": "Too Many Requests",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/x-www-form-urlencoded"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"description": "(Required) URL of your External Script if empty.",
+													"key": "url",
+													"value": "<string>"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/externalscripts/test",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"externalscripts",
+												"test"
+											]
+										},
+										"description": "Tests in real time your External Script by fetching its URL and returning the XML instructions. You can send any parameter in the request and therefore check the proper behaviour of the script depending on how call are placed (to a DID, from a SIP account, from WebRTC/JavaScript, etc.). Only one external script is allowed per domain."
+									},
+									"status": "Too Many Requests",
+									"code": 429,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+								},
+								{
+									"id": "8deed8fb-d6cb-4664-b939-b3d22094109b",
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/x-www-form-urlencoded"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"description": "(Required) URL of your External Script if empty.",
+													"key": "url",
+													"value": "<string>"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/externalscripts/test",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"externalscripts",
+												"test"
+											]
+										},
+										"description": "Tests in real time your External Script by fetching its URL and returning the XML instructions. You can send any parameter in the request and therefore check the proper behaviour of the script depending on how call are placed (to a DID, from a SIP account, from WebRTC/JavaScript, etc.). Only one external script is allowed per domain."
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+								},
+								{
+									"id": "d6364ef1-8ba0-4c15-aeee-0499ee836a6e",
+									"name": "Service Unavailable",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/x-www-form-urlencoded"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"description": "(Required) URL of your External Script if empty.",
+													"key": "url",
+													"value": "<string>"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/externalscripts/test",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"externalscripts",
+												"test"
+											]
+										},
+										"description": "Tests in real time your External Script by fetching its URL and returning the XML instructions. You can send any parameter in the request and therefore check the proper behaviour of the script depending on how call are placed (to a DID, from a SIP account, from WebRTC/JavaScript, etc.). Only one external script is allowed per domain."
+									},
+									"status": "Service Unavailable",
+									"code": 503,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+								}
+							]
+						}
+					],
+					"id": "983fc489-1fcc-4e45-ae8b-9eb9da141625"
+				},
+				{
+					"name": "External Script List",
+					"id": "f7393d77-b362-4483-9137-61244b3f7d33",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/externalscripts",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"externalscripts"
+							]
+						},
+						"description": "Returns the list of the external scripts for your domain. Only one external script is allowed per domain."
+					},
+					"response": [
+						{
+							"id": "9b37322d-0598-4290-b872-7586b2cad4c8",
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/externalscripts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"externalscripts"
+									]
+								},
+								"description": "Returns the list of the external scripts for your domain. Only one external script is allowed per domain."
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"url\": \"<string>\",\n    \"created_at\": \"<string>\",\n    \"updated_at\": \"<string>\"\n  },\n  {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"url\": \"<string>\",\n    \"created_at\": \"<string>\",\n    \"updated_at\": \"<string>\"\n  }\n]"
+						},
+						{
+							"id": "5734ad51-cb42-44e4-b6d0-33e3a5413dc7",
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/externalscripts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"externalscripts"
+									]
+								},
+								"description": "Returns the list of the external scripts for your domain. Only one external script is allowed per domain."
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+						},
+						{
+							"id": "1436f9e7-4b6d-4beb-8b75-e7a5cc868eaf",
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/externalscripts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"externalscripts"
+									]
+								},
+								"description": "Returns the list of the external scripts for your domain. Only one external script is allowed per domain."
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+						},
+						{
+							"id": "c3873871-477d-46d2-8bcb-de46818912e6",
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/externalscripts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"externalscripts"
+									]
+								},
+								"description": "Returns the list of the external scripts for your domain. Only one external script is allowed per domain."
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+						},
+						{
+							"id": "0d1e1886-73b7-4032-8ff4-86b8614c13f9",
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/externalscripts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"externalscripts"
+									]
+								},
+								"description": "Returns the list of the external scripts for your domain. Only one external script is allowed per domain."
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+						},
+						{
+							"id": "ea549c5c-4f45-4d66-b1ae-e7393c27a9a8",
+							"name": "Too Many Requests",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/externalscripts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"externalscripts"
+									]
+								},
+								"description": "Returns the list of the external scripts for your domain. Only one external script is allowed per domain."
+							},
+							"status": "Too Many Requests",
+							"code": 429,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+						},
+						{
+							"id": "b45a5859-ea2a-4ab5-ba6d-6a65aef055db",
+							"name": "Server Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/externalscripts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"externalscripts"
+									]
+								},
+								"description": "Returns the list of the external scripts for your domain. Only one external script is allowed per domain."
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+						},
+						{
+							"id": "7a1938c9-085b-44ec-9356-521256b0e56e",
+							"name": "Service Unavailable",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/externalscripts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"externalscripts"
+									]
+								},
+								"description": "Returns the list of the external scripts for your domain. Only one external script is allowed per domain."
+							},
+							"status": "Service Unavailable",
+							"code": 503,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "External Script Create",
+					"id": "776a646e-ace3-4e2a-8faf-72256b205bd5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"description": "(Required) URL of the external script. This URL is fetched when a calls is placed to one of your numbers",
+									"key": "url",
+									"value": "<string>"
+								},
+								{
+									"description": "name of the external script.",
+									"key": "name",
+									"value": "<string>"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/externalscripts",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"externalscripts"
+							]
+						},
+						"description": "Creates a new external script."
+					},
+					"response": [
+						{
+							"id": "d2a20f40-1293-4071-9423-5f5d11b1023f",
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"description": "(Required) URL of the external script. This URL is fetched when a calls is placed to one of your numbers",
+											"key": "url",
+											"value": "<string>"
+										},
+										{
+											"description": "name of the external script.",
+											"key": "name",
+											"value": "<string>"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/externalscripts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"externalscripts"
+									]
+								},
+								"description": "Creates a new external script."
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"url\": \"<string>\",\n    \"created_at\": \"<string>\",\n    \"updated_at\": \"<string>\"\n  },\n  {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"url\": \"<string>\",\n    \"created_at\": \"<string>\",\n    \"updated_at\": \"<string>\"\n  }\n]"
+						},
+						{
+							"id": "e8de6c15-3214-4b96-83f8-894d1852041c",
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"description": "(Required) URL of the external script. This URL is fetched when a calls is placed to one of your numbers",
+											"key": "url",
+											"value": "<string>"
+										},
+										{
+											"description": "name of the external script.",
+											"key": "name",
+											"value": "<string>"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/externalscripts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"externalscripts"
+									]
+								},
+								"description": "Creates a new external script."
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+						},
+						{
+							"id": "fea2c965-6199-475d-95c9-6a6789aa7452",
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"description": "(Required) URL of the external script. This URL is fetched when a calls is placed to one of your numbers",
+											"key": "url",
+											"value": "<string>"
+										},
+										{
+											"description": "name of the external script.",
+											"key": "name",
+											"value": "<string>"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/externalscripts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"externalscripts"
+									]
+								},
+								"description": "Creates a new external script."
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+						},
+						{
+							"id": "a94f643f-03da-46c8-a97d-204361ae8a33",
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"description": "(Required) URL of the external script. This URL is fetched when a calls is placed to one of your numbers",
+											"key": "url",
+											"value": "<string>"
+										},
+										{
+											"description": "name of the external script.",
+											"key": "name",
+											"value": "<string>"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/externalscripts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"externalscripts"
+									]
+								},
+								"description": "Creates a new external script."
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+						},
+						{
+							"id": "3442a87b-2880-4db6-89a4-d01a54051af8",
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"description": "(Required) URL of the external script. This URL is fetched when a calls is placed to one of your numbers",
+											"key": "url",
+											"value": "<string>"
+										},
+										{
+											"description": "name of the external script.",
+											"key": "name",
+											"value": "<string>"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/externalscripts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"externalscripts"
+									]
+								},
+								"description": "Creates a new external script."
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+						},
+						{
+							"id": "280a33f8-53e8-4c38-a2ce-6ea436917ad8",
+							"name": "Too Many Requests",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"description": "(Required) URL of the external script. This URL is fetched when a calls is placed to one of your numbers",
+											"key": "url",
+											"value": "<string>"
+										},
+										{
+											"description": "name of the external script.",
+											"key": "name",
+											"value": "<string>"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/externalscripts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"externalscripts"
+									]
+								},
+								"description": "Creates a new external script."
+							},
+							"status": "Too Many Requests",
+							"code": 429,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+						},
+						{
+							"id": "2de15692-57fb-4c87-9474-693830b44289",
+							"name": "Server Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"description": "(Required) URL of the external script. This URL is fetched when a calls is placed to one of your numbers",
+											"key": "url",
+											"value": "<string>"
+										},
+										{
+											"description": "name of the external script.",
+											"key": "name",
+											"value": "<string>"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/externalscripts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"externalscripts"
+									]
+								},
+								"description": "Creates a new external script."
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+						},
+						{
+							"id": "c81740e0-951f-4bca-bbe0-dc9402af34d6",
+							"name": "Service Unavailable",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"description": "(Required) URL of the external script. This URL is fetched when a calls is placed to one of your numbers",
+											"key": "url",
+											"value": "<string>"
+										},
+										{
+											"description": "name of the external script.",
+											"key": "name",
+											"value": "<string>"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/externalscripts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"externalscripts"
+									]
+								},
+								"description": "Creates a new external script."
+							},
+							"status": "Service Unavailable",
+							"code": 503,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"transactionId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"message\": \"<string>\",\n  \"info\": \"<string>\"\n}"
+						}
+					]
+				}
+			],
+			"id": "cd12a275-c56a-4c4d-8f53-d65954a240f9"
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "client_authentication",
+				"value": "body",
+				"type": "string"
+			},
+			{
+				"key": "accessTokenUrl",
+				"value": "https://api-prd.kpn.com/oauth/client_credential/accesstoken?grant_type=client_credentials",
+				"type": "string"
+			},
+			{
+				"key": "clientSecret",
+				"value": "{{client_secret}}",
+				"type": "string"
+			},
+			{
+				"key": "clientId",
+				"value": "{{client_id}}",
+				"type": "string"
+			},
+			{
+				"key": "tokenName",
+				"value": "access_token",
+				"type": "string"
+			},
+			{
+				"key": "challengeAlgorithm",
+				"value": "S256",
+				"type": "string"
+			},
+			{
+				"key": "grant_type",
+				"value": "client_credentials",
+				"type": "string"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "dc17b5e1-1bca-4246-a080-19db87042201",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "7f433d85-d27b-455f-9e29-110ce6c07cf9",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "591422bf-7182-40a3-8a89-ea779b82860f",
+			"key": "baseUrl",
+			"value": "https://api-prd.kpn.com/communication/apidaze/cpaas"
+		}
+	]
+}

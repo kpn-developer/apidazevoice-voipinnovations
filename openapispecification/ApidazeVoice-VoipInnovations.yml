@@ -1,0 +1,780 @@
+---
+swagger: "2.0"
+info:
+  description: "This REST API exposes actions that help your apps to interact with APIdaze’s Telco platform in mulitples ways. You can set the URL from where Apidaze fetchs XML instructions to run on Apidaze platform. You can write your various scripts there using the [Script Reference doc](https://developer.kpn.com/script-reference-documentation), and test them. You can manage your phone numbers, connect directly with other SIP carriers (inbound and outbound), manage your SIP accounts, voicemail boxes and messages, provision your hardphones.\n## [KPN Developer](https://developer.kpn.com/)<br/> [Getting Started](https://developer.kpn.com/getting-started)\n---\n "
+  version: v1.1.1
+  title: Apidaze Voice - VoIP Innovations
+  termsOfService: https://developer.kpn.com/legal
+  contact:
+    name: API Support
+    url: https://developer.kpn.com/support
+    email: api_developer@kpn.com
+host: api-prd.kpn.com
+basePath: /communication/apidaze/cpaas
+schemes:
+- https
+paths:
+  /externalscripts:
+    get:
+      tags:
+      - XML Scripting API
+      summary: External Script List
+      description: Returns the list of the external scripts for your domain. Only one external script is allowed per domain.
+      produces:
+      - application/json
+      parameters: []
+      security:
+      - OAuth2: []
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/XMLScriptingResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "429":
+          description: Too Many Requests
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "500":
+          description: Server Error
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "503":
+          description: Service Unavailable
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+    post:
+      tags:
+      - XML Scripting API
+      summary: External Script Create
+      description: Creates a new external script.
+      consumes:
+      - application/x-www-form-urlencoded
+      produces:
+      - application/json
+      parameters:
+      - name: name
+        in: formData
+        description: name of the external script.
+        required: false
+        type: string
+      - name: url
+        in: formData
+        description: URL of the external script. This URL is fetched when a calls is placed to one of your numbers
+        required: true
+        type: string
+      security:
+      - OAuth2: []
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/XMLScriptingResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "429":
+          description: Too Many Requests
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "500":
+          description: Server Error
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "503":
+          description: Service Unavailable
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+  /externalscripts/{id}:
+    get:
+      tags:
+      - XML Scripting API
+      summary: External Script Read
+      description: Returns the External Script object details by id.
+      produces:
+      - application/json
+      parameters:
+      - name: id
+        in: path
+        description: id of the external script.
+        required: true
+        type: string
+      security:
+      - OAuth2: []
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/XMLScriptingResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "429":
+          description: Too Many Requests
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "500":
+          description: Server Error
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "503":
+          description: Service Unavailable
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+    put:
+      tags:
+      - XML Scripting API
+      summary: External Script Update
+      description: Updates the external script.
+      consumes:
+      - application/x-www-form-urlencoded
+      produces:
+      - application/json
+      parameters:
+      - name: id
+        in: path
+        description: id of the external script.
+        required: true
+        type: string
+      - name: name
+        in: formData
+        description: name of the external script.
+        required: false
+        type: string
+      - name: url
+        in: formData
+        description: URL of the external script. This URL is fetched when a calls is placed to one of your numbers
+        required: true
+        type: string
+      security:
+      - OAuth2: []
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/XMLScriptingResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "429":
+          description: Too Many Requests
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "500":
+          description: Server Error
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "503":
+          description: Service Unavailable
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+    delete:
+      tags:
+      - XML Scripting API
+      summary: External Script Delete
+      description: Deletes the external script.
+      produces:
+      - application/json
+      parameters:
+      - name: id
+        in: path
+        description: id of the external script.
+        required: true
+        type: string
+      security:
+      - OAuth2: []
+      responses:
+        "204":
+          description: OK
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "429":
+          description: Too Many Requests
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "500":
+          description: Server Error
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "503":
+          description: Service Unavailable
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+  /externalscripts/test:
+    get:
+      tags:
+      - XML Scripting API
+      summary: External Script Test
+      description: "Tests in real time your External Script by fetching its URL and returning the XML instructions. You can send any parameter in the request and therefore check the proper behaviour of the script depending on how call are placed (to a DID, from a SIP account, from WebRTC/JavaScript, etc.). Only one external script is allowed per domain."
+      consumes:
+      - application/x-www-form-urlencoded
+      produces:
+      - application/json
+      parameters:
+      - name: url
+        in: formData
+        description: URL of your External Script if empty.
+        required: true
+        type: string
+      security:
+      - OAuth2: []
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/XMLScriptingResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "429":
+          description: Too Many Requests
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "500":
+          description: Server Error
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "503":
+          description: Service Unavailable
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+  /sipaccounts:
+    get:
+      tags:
+      - VoIP SIP API
+      summary: SIP Account List
+      description: Returns the list of SIP accounts.
+      produces:
+      - application/json
+      parameters: []
+      security:
+      - OAuth2: []
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/SIPAccountResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "429":
+          description: Too Many Requests
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "500":
+          description: Server Error
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "503":
+          description: Service Unavailable
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+    post:
+      tags:
+      - VoIP SIP API
+      summary: SIP Account Create
+      description: Creates a new SIP account
+      consumes:
+      - application/x-www-form-urlencoded
+      produces:
+      - application/json
+      parameters:
+      - name: username
+        in: formData
+        description: Username of this SIP account. This parameter is used to authenticate the SIP account.
+        required: true
+        type: string
+      - name: internal_caller_id_number
+        in: formData
+        description: "The caller identifier used internally, that is, when calls are placed from within your domain."
+        required: false
+        type: string
+      - name: external_caller_id_number
+        in: formData
+        description: "The caller identifier used externally, that is, when calls are placed from this account to a PSTN number."
+        required: false
+        type: string
+      - name: name
+        in: formData
+        description: Name of this SIP account
+        required: false
+        type: string
+      - name: mwi_account
+        in: formData
+        description: Message Waiting Indicator account of this SIP account. The Voicemail account this SIP account will be notified about when messages are left or deleted there.
+        required: false
+        type: string
+      security:
+      - OAuth2: []
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/SIPAccountResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "429":
+          description: Too Many Requests
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "500":
+          description: Server Error
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "503":
+          description: Service Unavailable
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+  /sipaccounts/{id}:
+    get:
+      tags:
+      - VoIP SIP API
+      summary: SIP Account Read
+      description: Returns a SIP account by id.
+      produces:
+      - application/json
+      parameters:
+      - name: id
+        in: path
+        description: The id of the SIP account whose details are returned
+        required: true
+        type: string
+      security:
+      - OAuth2: []
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/SIPAccountResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "429":
+          description: Too Many Requests
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "500":
+          description: Server Error
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "503":
+          description: Service Unavailable
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+    put:
+      tags:
+      - VoIP SIP API
+      summary: SIP Account Update
+      description: Returns a SIP account by id.
+      consumes:
+      - application/x-www-form-urlencoded
+      produces:
+      - application/json
+      parameters:
+      - name: id
+        in: path
+        description: The id of the SIP account whose details are returned
+        required: true
+        type: string
+      - name: internal_caller_id_number
+        in: formData
+        description: "The caller identifier used internally, that is, when calls are placed from within your domain."
+        required: false
+        type: string
+      - name: external_caller_id_number
+        in: formData
+        description: "The caller identifier used externally, that is, when calls are placed from this account to a PSTN number."
+        required: false
+        type: string
+      - name: name
+        in: formData
+        description: Name of this SIP account
+        required: false
+        type: string
+      - name: mwi_account
+        in: formData
+        description: Message Waiting Indicator account of this SIP account. The Voicemail account this SIP account will be notified about when messages are left or deleted there.
+        required: false
+        type: string
+      security:
+      - OAuth2: []
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/SIPAccountResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "429":
+          description: Too Many Requests
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "500":
+          description: Server Error
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "503":
+          description: Service Unavailable
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+    delete:
+      tags:
+      - VoIP SIP API
+      summary: SIP Account Delete
+      description: Deletes the SIP account.
+      produces:
+      - application/json
+      parameters:
+      - name: id
+        in: path
+        description: The id of the SIP account whose details are returned
+        required: true
+        type: string
+      security:
+      - OAuth2: []
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/SIPAccountResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "429":
+          description: Too Many Requests
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "500":
+          description: Server Error
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "503":
+          description: Service Unavailable
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+  /sipaccounts/{id}/status:
+    get:
+      tags:
+      - VoIP SIP API
+      summary: SIP Account Read
+      description: Returns a SIP account by id.
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: id
+        in: path
+        description: The id of the SIP account whose details are returned
+        required: true
+        type: string
+      security:
+      - OAuth2: []
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/SIPAccountResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "429":
+          description: Too Many Requests
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "500":
+          description: Server Error
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        "503":
+          description: Service Unavailable
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+securityDefinitions:
+  OAuth2:
+    type: oauth2
+    tokenUrl: https://api-prd.kpn.com/oauth/client_credential/accesstoken?grant_type=client_credentials
+    flow: application
+definitions:
+  ErrorResponse:
+    type: object
+    properties:
+      transactionId:
+        type: string
+        description: transaction id of the the request
+        title: Transaction ID
+      status:
+        type: string
+        description: Status
+        title: Status
+      name:
+        type: string
+        description: Error name
+        title: Error name
+      message:
+        type: string
+        description: Error message
+        title: Error message
+      info:
+        type: string
+        description: Additional information about error
+        title: Info
+  XMLScriptingResponse:
+    type: array
+    description: Response containing the list of the external scripts for your domain.
+    items:
+      $ref: '#/definitions/XMLScriptingObject'
+  XMLScriptingObject:
+    type: object
+    properties:
+      id:
+        type: string
+        description: id of the external script
+        title: id
+      name:
+        type: string
+        description: name of the external script
+        title: name
+      url:
+        type: string
+        description: url of the external script
+        title: url
+      created_at:
+        type: string
+        description: creation date of the external script
+        title: created_at
+      updated_at:
+        type: string
+        description: updation date of the external script
+        title: updated_at
+  SIPAccountResponse:
+    type: array
+    description: Response containing the list of the external scripts for your domain.
+    items:
+      $ref: '#/definitions/SIPAccountObject'
+  SIPAccountObject:
+    type: object
+    properties:
+      id:
+        type: string
+        description: id of the external script
+        title: id
+      name:
+        type: string
+        description: name of the external script
+        title: name
+      sip:
+        $ref: '#/definitions/SIP'
+      callerid:
+        $ref: '#/definitions/Callerid'
+      voicemail:
+        $ref: '#/definitions/Voicemail'
+      created_at:
+        type: string
+        description: creation date of SIP account
+        title: created_at
+      updated_at:
+        type: string
+        description: updation date of SIP account
+        title: updated_at
+  SIP:
+    type: object
+    properties:
+      username:
+        type: string
+        description: Username of this SIP account. This parameter is used to authenticate the SIP account.
+        title: username
+      password:
+        type: string
+        description: Password of this SIP account.
+        title: password
+  Callerid:
+    type: object
+    properties:
+      internal_name:
+        type: string
+        description: Name of this SIP account
+        title: internal_name
+      internal_number:
+        type: string
+        description: Number of this SIP account
+        title: internal_number
+      external_name:
+        type: string
+        description: Name of this SIP account
+        title: external_name
+      external_number:
+        type: string
+        description: Number of this SIP account
+        title: external_number
+  Voicemail:
+    type: object
+    properties:
+      mwi_account:
+        type: string
+        description: Message Waiting Indicator account of this SIP account. The Voicemail account this SIP account will be notified about when messages are left or deleted there.
+        title: mwi_account
+externalDocs:
+  description: HTTP response headers
+  url: https://developer.kpn.com/documentation-response-headers
